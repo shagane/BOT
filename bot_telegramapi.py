@@ -36,8 +36,7 @@ def get_text_messages(message):
     
 @bot.message_handler(content_types=['sticker'])
 def send_sticker(message):
-    bot.send_sticker(message.from_user.id, 'CAACAgIAAxkBAAPTX5h7vG686rXtC85SZdbGMUQXbXEAAkMDAAJHFWgJUuSNlCLm6TQbBA')
-    print(message)
-
+    bot.send_message(message.from_user.id, "Я тоже так могу! Смотри")
+    bot.send_sticker(message.from_user.id, message.json['sticker']['file_id'])
 
 bot.polling(none_stop=True, interval=0)
